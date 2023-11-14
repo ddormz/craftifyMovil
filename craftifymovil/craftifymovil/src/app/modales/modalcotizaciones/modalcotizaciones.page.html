@@ -1,13 +1,68 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
-    <ion-title>modalcotizaciones</ion-title>
+    <ion-title>{{ cotizaciones.nombre_cotizacion}}</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="cerrarModal()">Cerrar</ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">modalcotizaciones</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content class="ion-padding">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Detalles del Producto</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item>
+          <ion-icon name="person" slot="start"></ion-icon>
+          <ion-label class="label">Cliente</ion-label>
+          <ion-text>{{ cotizaciones.nombre_cliente }} {{ cotizaciones.apellido_cliente }}</ion-text>
+        </ion-item>
+        <ion-item>
+          <ion-icon name="grid" slot="start"></ion-icon>
+          <ion-label class="label">Fecha</ion-label>
+          <ion-text>{{ cotizaciones.fecha_cotizacion }}</ion-text>
+        </ion-item>
+        <ion-item>
+          <ion-icon name="folder" slot="start"></ion-icon>
+          <ion-label class="label">Nombre Cotizacion</ion-label>
+          <ion-text>{{ cotizaciones.nombre_cotizacion }}</ion-text>
+        </ion-item>
+        <ion-item>
+          <ion-icon name="person" slot="start"></ion-icon>
+          <ion-label class="label">RUT Cliente</ion-label>
+          <ion-text>{{ cotizaciones.cliente }}</ion-text>
+        </ion-item>
+        <ion-item>
+          <ion-icon name="construct" slot="start"></ion-icon>
+          <ion-label class="label">Subtotal</ion-label>
+          <ion-text>${{ cotizaciones.subtotal }}</ion-text>
+        </ion-item>
+        <ion-item>
+          <ion-icon name="chatbox" slot="start"></ion-icon>
+          <ion-label class="label">I.V.A</ion-label>
+          <ion-text>${{ cotizaciones.iva }}</ion-text>
+        </ion-item>
+        <ion-item>
+          <ion-icon name="pricetag" slot="start"></ion-icon>
+          <ion-label class="label">Total</ion-label>
+          <ion-text>${{ cotizaciones.total }}</ion-text>
+        </ion-item>
+        <ion-item>
+          <ion-icon name="cash" slot="start"></ion-icon>
+          <ion-label class="label">Metodo de Pago</ion-label>
+          <ion-text>{{ cotizaciones.metodopago }}</ion-text>
+        </ion-item>
+        <ion-item>
+          <ion-icon name="cube" slot="start"></ion-icon>
+          <ion-label class="label">Comentario</ion-label>
+          <ion-text>{{ cotizaciones.comentario }}</ion-text>
+        </ion-item>
+      </ion-list>
+      <ion-button expand="full" (click)="descargarPDF(cotizaciones.id_cotizacion)">
+        <ion-icon name="document-attach"></ion-icon> Descargar Detalle PDF
+      </ion-button>
+    </ion-card-content>
+  </ion-card>
 </ion-content>

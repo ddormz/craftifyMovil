@@ -20,11 +20,6 @@
           <ion-text>{{ avances.avance_id }}</ion-text>
         </ion-item>
         <ion-item>
-          <ion-icon name="image" slot="start"></ion-icon>
-          <ion-label class="label">Imagen</ion-label>
-          <ion-text>{{ avances.imagen }}</ion-text>
-        </ion-item>
-        <ion-item>
           <ion-icon name="folder" slot="start"></ion-icon>
           <ion-label class="label">Comentario</ion-label>
           <ion-text>{{ avances.comentario }}</ion-text>
@@ -35,16 +30,28 @@
           <ion-text>{{ avances.tarea }}</ion-text>
         </ion-item>
         <ion-item>
+          <ion-icon name="construct" slot="start"></ion-icon>
+          <ion-label class="label">Status Tarea</ion-label>
+          <ion-text>{{ avances.status_tarea }}</ion-text>
+        </ion-item>
+        <ion-item>
           <ion-icon name="people" slot="start"></ion-icon>
-          <ion-label class="label">ID Equipo</ion-label>
-          <ion-text>{{ avances.equipo_id_equipo }}</ion-text>
+          <ion-label class="label">Equipo</ion-label>
+          <ion-text>{{ avances.equipo }}</ion-text>
         </ion-item>
         <ion-item>
           <ion-icon name="cube" slot="start"></ion-icon>
-          <ion-label class="label">ID Proyecto</ion-label>
-          <ion-text>{{ avances.proyecto_id_proyecto }}</ion-text>
+          <ion-label class="label">Proyecto</ion-label>
+          <ion-text>{{ avances.proyecto }}</ion-text>
         </ion-item>
       </ion-list>
+      <ion-item>
+        <ion-icon name="image" slot="start"></ion-icon>
+        <ion-label class="label">Imagen del Avance</ion-label>
+      </ion-item>
+      <ion-img [src]="baseURL + avances.imagen" alt="Imagen del avance" ></ion-img>
+      <ion-button expand="block" (click)="cerrarModal()">Editar</ion-button>
+      <ion-button expand="block" (click)="cerrarModal()">Eliminar</ion-button>
     </ion-card-content>
   </ion-card>
 </ion-content>

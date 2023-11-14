@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>{{ trabajadores.first_name}}</ion-title>
+    <ion-title>{{ trabajadores.nombre}}</ion-title>
     <ion-buttons slot="end">
       <ion-button (click)="cerrarModal()">Cerrar</ion-button>
     </ion-buttons>
@@ -22,12 +22,12 @@
         <ion-item>
           <ion-icon name="people" slot="start"></ion-icon>
           <ion-label class="label">Nombre</ion-label>
-          <ion-text>{{ trabajadores.first_name }}</ion-text>
+          <ion-text>{{ trabajadores.nombre }}</ion-text>
         </ion-item>
         <ion-item>
           <ion-icon name="people" slot="start"></ion-icon>
           <ion-label class="label">Apellido</ion-label>
-          <ion-text>{{ trabajadores.last_name }}</ion-text>
+          <ion-text>{{ trabajadores.apellido}}</ion-text>
         </ion-item>
         <ion-item>
           <ion-icon name="mail" slot="start"></ion-icon>
@@ -37,7 +37,7 @@
         <ion-item>
           <ion-icon name="calendar" slot="start"></ion-icon>
           <ion-label class="label">Fecha Contrato</ion-label>
-          <ion-text>{{ trabajadores.date_joined }}</ion-text>
+          <ion-text>{{ trabajadores.fecha_agregado }}</ion-text>
         </ion-item>
       </ion-list>
     </ion-card-content>

@@ -21,7 +21,7 @@
 <div>
   <ion-list>
     <ion-item *ngFor="let trabajadores of datosApi">
-      <ion-label class="nombre-trabajador-label">{{ trabajadores.first_name}} {{ trabajadores.last_name}}</ion-label>
+      <ion-label class="nombre-trabajador-label">{{ trabajadores.nombre}} {{ trabajadores.apellido}}</ion-label>
       <ion-button expand="full" (click)="abrirModal(trabajadores)">
         <ion-icon name="eye-outline"></ion-icon> Ver Trabajador
       </ion-button>

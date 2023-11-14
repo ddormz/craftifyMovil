@@ -23,5 +23,9 @@ export class ApiService {
     const url1 = '  http://127.0.0.1:8000/api/apiproductos/'; // Reemplaza con la URL de tu API
     return this.http.get(url1);
   }
+  getDatosCotizaciones() {
+    const url1 = '  http://127.0.0.1:8000/api/apicotizaciones/'; // Reemplaza con la URL de tu API
+    return this.http.get(url1);
+  }
 
 }

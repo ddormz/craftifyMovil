@@ -17,3 +17,13 @@
   </ion-header>
   <app-explore-container name="Craftify Modulo Cotizaciones"></app-explore-container>
 </ion-content>
+<div>
+  <ion-list>
+    <ion-item *ngFor="let cotizaciones of datosApi">
+      <ion-label class="nombre-cotizaciones">{{ cotizaciones.id_cotizacion }} {{ cotizaciones.nombre_cotizacion }}</ion-label>
+      <ion-button expand="full" (click)="abrirModal(cotizaciones)">
+        <ion-icon name="eye-outline"></ion-icon> Ver Cotizacion
+      </ion-button>
+    </ion-item>
+  </ion-list>
+</div>

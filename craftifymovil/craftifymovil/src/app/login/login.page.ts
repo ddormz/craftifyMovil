@@ -1,5 +1,7 @@
 import { Component} from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthService } from '../auth.service';
+import { AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-login',
@@ -7,20 +9,36 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.page.scss'],
 })
 export class LoginPage {
-  
-  email: string = ''
-  password: string = ''
+  rut: string = '';
+  password: string = '';
 
-  constructor(private router: Router) {}
+  constructor(private authService: AuthService, private router: Router, private alertController: AlertController) { }
 
-  onLogin() {
-    // En un escenario real, aquí verificarías las credenciales con un servicio de autenticación.
-    // Por simplicidad, este ejemplo solo redirecciona al usuario a una página "dashboard" si se ingresa cualquier valor en los campos de entrada.
-    if (this.email && this.password) {
-      // Redirige al usuario a la página de "tabs" después del inicio de sesión.
-      this.router.navigate(['/tabs']);
-    } else {
-      alert('Por favor, ingrese un correo electrónico y una contraseña válidos.');
-    }
+  onLogin(): void {
+    this.authService.login(this.rut, this.password).subscribe(
+      (response: any) => {
+        this.router.navigate(['/tabs']);
+      },
+      error => {
+        console.error(error);
+        // Maneja el error de inicio de sesión
+
+        // Muestra un mensaje de alerta al usuario
+        this.presentAlert('Credenciales Inválidas', 'Por favor, verifica tu RUT y Contraseña.');
+      }
+    );
+  }
+
+  async presentAlert(header: string, message: string): Promise<void> {
+    const alert = await this.alertController.create({
+      header: header,
+      message: message,
+      buttons: ['OK']
+    });
+
+    await alert.present();
   }
 }
+
+
+

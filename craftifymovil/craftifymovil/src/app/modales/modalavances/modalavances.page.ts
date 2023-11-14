@@ -8,6 +8,7 @@ import { ModalController } from '@ionic/angular';
 })
 export class ModalavancesPage{
   @Input() avances: any;
+  baseURL: string = 'http://127.0.0.1:8000';
   constructor(private modalController: ModalController) {}
 
   cerrarModal() {
