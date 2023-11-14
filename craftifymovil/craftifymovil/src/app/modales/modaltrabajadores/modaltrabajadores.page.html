@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>{{ trabajadores.first_name}}</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="cerrarModal()">Cerrar</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Detalles del Trabajador</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item>
+          <ion-icon name="person" slot="start"></ion-icon>
+          <ion-label class="label">RUT</ion-label>
+          <ion-text>{{ trabajadores.rut }}</ion-text>
+        </ion-item>
+        <ion-item>
+          <ion-icon name="people" slot="start"></ion-icon>
+          <ion-label class="label">Nombre</ion-label>
+          <ion-text>{{ trabajadores.first_name }}</ion-text>
+        </ion-item>
+        <ion-item>
+          <ion-icon name="people" slot="start"></ion-icon>
+          <ion-label class="label">Apellido</ion-label>
+          <ion-text>{{ trabajadores.last_name }}</ion-text>
+        </ion-item>
+        <ion-item>
+          <ion-icon name="mail" slot="start"></ion-icon>
+          <ion-label class="label">Email</ion-label>
+          <ion-text>{{ trabajadores.email }}</ion-text>
+        </ion-item>
+        <ion-item>
+          <ion-icon name="calendar" slot="start"></ion-icon>
+          <ion-label class="label">Fecha Contrato</ion-label>
+          <ion-text>{{ trabajadores.date_joined }}</ion-text>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

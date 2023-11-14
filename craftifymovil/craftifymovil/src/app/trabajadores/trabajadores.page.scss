@@ -1,0 +1,11 @@
+ion-button {
+    --background: #7CF0A9;
+    --color: black;
+    font-weight: bold;
+}
+
+ion-toolbar.sticky-toolbar {
+    position: sticky;
+    top: 0;
+    z-index: 10; // Puedes ajustar el valor según sea necesario
+  }

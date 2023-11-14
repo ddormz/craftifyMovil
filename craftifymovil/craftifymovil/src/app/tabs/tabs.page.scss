@@ -1,0 +1,12 @@
+ion-tab-button{
+    --color: grey;
+    --color-selected:#7CF0A9;
+    --background: white;
+    --backgroun-focused:white;
+    --ripple-color: white;
+    font-weight: bold;
+    justify-content: center;
+}
+
+@media screen and (max-width: 600px) {
+}

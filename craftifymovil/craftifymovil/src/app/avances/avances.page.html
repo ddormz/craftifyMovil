@@ -1,0 +1,30 @@
+<ion-content>
+  <ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start" >
+        <!-- Icono para el perfil -->
+        <ion-button (click)="irAPerfil()">
+          <ion-icon name="person"></ion-icon>
+        </ion-button>
+      </ion-buttons>  
+        <!-- Icono para cerrar sesión (logout) -->
+        <ion-buttons slot="end" >
+        <ion-button (click)="cerrarSesion()">
+          <ion-icon name="log-out"></ion-icon>
+        </ion-button>
+      </ion-buttons>  
+    </ion-toolbar>
+  </ion-header>
+  <app-explore-container name="Craftify Modulo Avances"></app-explore-container>
+</ion-content>
+
+<div>
+  <ion-list>
+    <ion-item *ngFor="let avances of datosApi">
+      <ion-label class="nombre-proyecto-label">{{ avances.avance_id }}</ion-label>
+      <ion-button expand="full" (click)="abrirModal(avances)">
+        <ion-icon name="eye-outline"></ion-icon> Ver Detalles
+      </ion-button>
+    </ion-item>
+  </ion-list>
+</div>

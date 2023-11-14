@@ -1,0 +1,31 @@
+ion-button {
+    --background: #7CF0A9;
+    --color: black;
+    font-weight: bold;
+}
+
+ion-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden; 
+  }
+  
+  ion-list {
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  img {
+    
+    width: 130px;
+    height: 130px;
+  }

@@ -1,0 +1,70 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>{{ productos.nombre_producto }}</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="cerrarModal()">Cerrar</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Detalles del Producto</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item>
+          <ion-icon name="person" slot="start"></ion-icon>
+          <ion-label class="label">ID Producto</ion-label>
+          <ion-text>{{ productos.id_producto }}</ion-text>
+        </ion-item>
+        <ion-item>
+          <ion-icon name="grid" slot="start"></ion-icon>
+          <ion-label class="label">Categoria</ion-label>
+          <ion-text>{{ productos.categoria }}</ion-text>
+        </ion-item>
+        <ion-item>
+          <ion-icon name="folder" slot="start"></ion-icon>
+          <ion-label class="label">subcategoria</ion-label>
+          <ion-text>{{ productos.subcategoria }}</ion-text>
+        </ion-item>
+        <ion-item>
+          <ion-icon name="person" slot="start"></ion-icon>
+          <ion-label class="label">Marca</ion-label>
+          <ion-text>{{ productos.marca }}</ion-text>
+        </ion-item>
+        <ion-item>
+          <ion-icon name="construct" slot="start"></ion-icon>
+          <ion-label class="label">Nombre Producto</ion-label>
+          <ion-text>{{ productos.nombre_producto }}</ion-text>
+        </ion-item>
+        <ion-item>
+          <ion-icon name="chatbox" slot="start"></ion-icon>
+          <ion-label class="label">Descripcion</ion-label>
+          <ion-text>{{ productos.descripcion}}</ion-text>
+        </ion-item>
+        <ion-item>
+          <ion-icon name="pricetag" slot="start"></ion-icon>
+          <ion-label class="label">Precio Compra</ion-label>
+          <ion-text>{{ productos.precio_compra }}</ion-text>
+        </ion-item>
+        <ion-item>
+          <ion-icon name="cash" slot="start"></ion-icon>
+          <ion-label class="label">Precio Venta</ion-label>
+          <ion-text>{{ productos.precio_venta}}</ion-text>
+        </ion-item>
+        <ion-item>
+          <ion-icon name="cube" slot="start"></ion-icon>
+          <ion-label class="label">Variante</ion-label>
+          <ion-text>{{ productos.variante }}</ion-text>
+        </ion-item>
+        <ion-item>
+          <ion-icon name="podium" slot="start"></ion-icon>
+          <ion-label class="label">Stock</ion-label>
+          <ion-text>{{ productos.stock }}</ion-text>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
