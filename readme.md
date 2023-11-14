@@ -1,1 +1,4 @@
-co
+- Logica de Login OK
+- Logica de PDF OK
+- Perfil Falta
+- Seguir Estilizando
