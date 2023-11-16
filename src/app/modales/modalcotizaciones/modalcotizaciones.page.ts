@@ -30,7 +30,7 @@ export class ModalcotizacionesPage{
   }
 
   descargarPDF(idCotizacion: number) {
-    this.httpClient.get(`http://127.0.0.1:8000/api/cotizaciones/pdf/${idCotizacion}/`, {
+    this.httpClient.get(`https://craftify.ngrok.app/api/cotizaciones/pdf/${idCotizacion}/`, {
       responseType: 'arraybuffer',
     })
       .subscribe(

@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class AuthService {
-  private apiUrl = 'http://127.0.0.1:8000';  // Cambia esto con la URL de tu API
+  private apiUrl = 'https://craftify.ngrok.app';  // Cambia esto con la URL de tu API
 
   constructor(private http: HttpClient) { }
 

@@ -8,7 +8,7 @@ import { ModalController } from '@ionic/angular';
 })
 export class ModalavancesPage{
   @Input() avances: any;
-  baseURL: string = 'http://127.0.0.1:8000';
+  baseURL: string = 'https://craftify.ngrok.app';
   constructor(private modalController: ModalController) {}
 
   cerrarModal() {

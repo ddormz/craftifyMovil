@@ -5,27 +5,36 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root',
 })
 export class ApiService {
+  private baseUrl = 'https://craftify.ngrok.app'; // Coloca la URL de tu API aquÃ­
+
   constructor(private http: HttpClient) {}
 
-  getDatosDesdeAPIProyectos() {
-    const url = 'http://127.0.0.1:8000/api/apiproyectos/'; // Reemplaza con la URL de tu API
-    return this.http.get(url);
-  }
-  getDatosDesdeAPITrabajadores() {
-    const url1 = 'http://127.0.0.1:8000/api/apitrabajadores/'; // Reemplaza con la URL de tu API
-    return this.http.get(url1);
-  }
-  getDatosDesdeAPIAvances() {
-    const url1 = '  http://127.0.0.1:8000/api/apiveravances/'; // Reemplaza con la URL de tu API
-    return this.http.get(url1);
-  }
-  getDatosDesdeAPIProductos() {
-    const url1 = '  http://127.0.0.1:8000/api/apiproductos/'; // Reemplaza con la URL de tu API
-    return this.http.get(url1);
-  }
-  getDatosCotizaciones() {
-    const url1 = '  http://127.0.0.1:8000/api/apicotizaciones/'; // Reemplaza con la URL de tu API
-    return this.http.get(url1);
+  private getUrl(endpoint: string): string {
+    return `${this.baseUrl}/api/${endpoint}/`;
   }
 
+  getDatosDesdeAPIProyectos() {
+    const url = this.getUrl('apiproyectos');
+    return this.http.get(url);
+  }
+
+  getDatosDesdeAPITrabajadores() {
+    const url = this.getUrl('apitrabajadores');
+    return this.http.get(url);
+  }
+
+  getDatosDesdeAPIAvances() {
+    const url = this.getUrl('apiveravances');
+    return this.http.get(url);
+  }
+
+  getDatosDesdeAPIProductos() {
+    const url = this.getUrl('apiproductos');
+    return this.http.get(url);
+  }
+
+  getDatosCotizaciones() {
+    const url = this.getUrl('apicotizaciones');
+    return this.http.get(url);
+  }
 }
