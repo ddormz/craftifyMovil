@@ -28,6 +28,11 @@ const routes: Routes = [
         loadChildren: () => import('../avances/avances.module').then(m => m.AvancesPageModule)
       },
       {
+        path: 'tareas',
+        loadChildren: () => import('../tareas/tareas.module').then(m => m.TareasPageModule)
+      },
+
+      {
         path: '',
         redirectTo: '/tabs/proyectos',
         pathMatch: 'full'

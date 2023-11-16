@@ -37,4 +37,8 @@ export class ApiService {
     const url = this.getUrl('apicotizaciones');
     return this.http.get(url);
   }
+  getDatosTareas() {
+    const url = this.getUrl('apitareas');
+    return this.http.get(url);
+  }
 }

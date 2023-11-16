@@ -51,8 +51,12 @@ export class AvancesPage{
     // Luego, redirige a la página de inicio de sesión o a la página principal
     this.router.navigate(['/login']);
   }
-
-  recargarPagina() {
+  
+  handleRefresh(event:any) {
     window.location.reload();
+    setTimeout(() => {
+      // Any calls to load data go here
+      event.target.complete();
+    }, 2000);
   }
 }

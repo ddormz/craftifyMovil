@@ -7,8 +7,10 @@ ion-button {
 @media screen and (max-width: 600px) {
 }
 
-.scrollable-div {
-    max-height: 250px; /* o el valor que prefieras */
-    overflow-y: scroll; /* agregar barra de desplazamiento vertical cuando sea necesario */
-  }
+div{
+    margin-top: auto;
+}
 
+ion-card-title {
+text-align: center;
+  }

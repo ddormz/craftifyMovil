@@ -1,34 +1,30 @@
-
-  <ion-header>
-    <ion-toolbar>
-      <ion-buttons slot="start" >
-        <!-- Icono para el perfil -->
-        <ion-button (click)="recargarPagina()">
-          <ion-icon name="refresh"></ion-icon>
-        </ion-button>
-      </ion-buttons>
-
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="end" >
+      <!-- Icono para el perfil -->
+      <ion-button (click)="irAPerfil()">
+        <ion-icon name="person"></ion-icon>
+      </ion-button>
+    </ion-buttons>  
+    
+      <!-- Icono para cerrar sesión (logout) -->
       <ion-buttons slot="end" >
-        <!-- Icono para el perfil -->
-        <ion-button (click)="irAPerfil()">
-          <ion-icon name="person"></ion-icon>
-        </ion-button>
-      </ion-buttons>  
-      
-        <!-- Icono para cerrar sesión (logout) -->
-        <ion-buttons slot="end" >
-        <ion-button (click)="cerrarSesion()">
-          <ion-icon name="log-out"></ion-icon>
-        </ion-button>
-      </ion-buttons>  
-    </ion-toolbar>
-  </ion-header>
-  
-<ion-content>
-  <app-explore-container name="Craftify Modulo Trabajadores"></app-explore-container>
-</ion-content>
+      <ion-button (click)="cerrarSesion()">
+        <ion-icon name="log-out"></ion-icon>
+      </ion-button>
+    </ion-buttons>  
+  </ion-toolbar>
+</ion-header>
 
-<div class="scrollable-div">
+<ion-content>
+  <ion-refresher slot="fixed" [pullFactor]="0.5" [pullMin]="100" [pullMax]="200" (ionRefresh)="handleRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Trabajadores</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
   <ion-list>
     <ion-item *ngFor="let trabajadores of datosApi">
       <ion-label class="nombre-trabajador-label">{{ trabajadores.nombre}} {{ trabajadores.apellido}}</ion-label>
@@ -36,5 +32,7 @@
         <ion-icon name="eye-outline"></ion-icon> Ver Trabajador
       </ion-button>
     </ion-item>
-  </ion-list>
-</div>
+  </ion-list> 
+</ion-card-content>
+</ion-card>
+</ion-content>

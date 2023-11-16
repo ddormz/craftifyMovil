@@ -22,14 +22,14 @@
   </ion-refresher>
   <ion-card>
     <ion-card-header>
-      <ion-card-title>Productos</ion-card-title>
+      <ion-card-title>Tareas</ion-card-title>
     </ion-card-header>
     <ion-card-content>
   <ion-list>
-    <ion-item *ngFor="let productos of datosApi">
-      <ion-label class="nombre-productos-label">{{ productos.nombre_producto}}</ion-label>
-      <ion-button expand="full" (click)="abrirModal(productos)">
-        <ion-icon name="eye-outline"></ion-icon> Ver Producto
+    <ion-item *ngFor="let tareas of datosApi">
+      <ion-label class="nombre-tareas-label">{{ tareas.tarea}}</ion-label>
+      <ion-button expand="full" (click)="abrirModal(tareas)">
+        <ion-icon name="eye-outline"></ion-icon> Ver Tarea
       </ion-button>
     </ion-item>
   </ion-list> 

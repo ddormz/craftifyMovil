@@ -1,0 +1,56 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>{{ tareas.tarea }}</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="cerrarModal()">Cerrar</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Detalles de Tarea</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item>
+          <ion-icon name="file-tray"></ion-icon>
+          <ion-label class="label">Tarea Asignada</ion-label>
+          <ion-text>{{ tareas.tarea}}</ion-text>
+        </ion-item>
+        <ion-item>
+          <ion-icon name="people" slot="start"></ion-icon>
+          <ion-label class="label">Equipo</ion-label>
+          <ion-text>{{ tareas.equipo_id_equipo }}</ion-text>
+        </ion-item>
+        <ion-item>
+          <ion-icon name="flag" slot="start"></ion-icon>
+          <ion-label class="label">Status</ion-label>
+          <ion-text>{{ tareas.status_tarea }}</ion-text>
+        </ion-item>
+        <ion-item>
+          <ion-icon name="person" slot="start"></ion-icon>
+          <ion-label class="label">Nombre Trabajador</ion-label>
+          <ion-text>{{ tareas.trabajador }}</ion-text>
+        </ion-item>
+        <ion-item>
+          <ion-icon name="person" slot="start"></ion-icon>
+          <ion-label class="label">Apellido Trabajador</ion-label>
+          <ion-text>{{ tareas.apellido_trabajador }}</ion-text>
+        </ion-item>
+        <ion-item>
+          <ion-icon name="calendar"></ion-icon>
+          <ion-label class="label">Fecha Asignacion</ion-label>
+          <ion-text>{{ tareas.fecha_asignacion}}</ion-text>
+        </ion-item>
+        <ion-item>
+          <ion-icon name="calendar" slot="start"></ion-icon>
+          <ion-label class="label">Fecha Termino</ion-label>
+          <ion-text>{{ tareas.fecha_termino }}</ion-text>
+        </ion-item>
+        
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

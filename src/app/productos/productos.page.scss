@@ -1,18 +1,16 @@
 ion-button {
-    --background: #7CF0A9;
-    --color: black;
-    font-weight: bold;
+  --background: #7CF0A9;
+  --color: black;
+  font-weight: bold;
 }
 
 @media screen and (max-width: 600px) {
 }
 
-
 div{
-    margin-top: auto;
+  margin-top: auto;
 }
 
-  ion-card-title {
-    text-align: center;
-    /* Otros estilos personalizados si es necesario */
-  }
+ion-card-title {
+text-align: center;
+}

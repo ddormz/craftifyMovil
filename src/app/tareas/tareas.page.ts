@@ -1,21 +1,20 @@
 import { Component} from '@angular/core';
 import { ApiService } from '../api.service';
 import { ModalController } from '@ionic/angular';
+import { ModaltareaPage } from '../modales/modaltarea/modaltarea.page';
 import { Router } from '@angular/router';
-import { ModalcotizacionesPage } from '../modales/modalcotizaciones/modalcotizaciones.page';
-import { HttpClient } from '@angular/common/http';
 
 @Component({
-  selector: 'app-cotizaciones',
-  templateUrl: './cotizaciones.page.html',
-  styleUrls: ['./cotizaciones.page.scss'],
+  selector: 'app-tareas',
+  templateUrl: './tareas.page.html',
+  styleUrls: ['./tareas.page.scss'],
 })
-export class CotizacionesPage {
+export class TareasPage{
 
   datosApi: any;
 
-  constructor(private apiService: ApiService, private modalController: ModalController, private router: Router, private httpClient: HttpClient) {
-    this.apiService.getDatosCotizaciones().subscribe(
+  constructor(private apiService: ApiService, private modalController: ModalController, private router: Router) {
+    this.apiService.getDatosTareas().subscribe(
       (data) => {
         console.log('Datos recibidos de la API:', data);
         this.datosApi = data;
@@ -28,20 +27,19 @@ export class CotizacionesPage {
 
   async abrirModal(item: any) {
     const modal = await this.modalController.create({
-      component: ModalcotizacionesPage,
+      component: ModaltareaPage,
       componentProps: {
-        cotizaciones: item
+        tareas: item
       }
     });
 
     return await modal.present();
   }
 
-  
   cerrarModal() {
     this.modalController.dismiss(); // Cierra el modal
   }
-
+  
   // Función para ir a la página de perfil
   irAPerfil() {
     // Puedes navegar a la página de perfil usando el enrutador
@@ -54,7 +52,7 @@ export class CotizacionesPage {
     // Luego, redirige a la página de inicio de sesión o a la página principal
     this.router.navigate(['/login']);
   }
-
+  
   handleRefresh(event:any) {
     window.location.reload();
     setTimeout(() => {

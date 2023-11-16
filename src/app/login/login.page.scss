@@ -4,28 +4,42 @@ ion-button {
     font-weight: bold;
 }
 
-ion-content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    overflow: hidden; 
-  }
-  
-  ion-list {
-    width: 100%;
-    max-width: 400px;
-    text-align: center;
-  }
-  
-  form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
+.center-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30vh; /* Ajusta la altura al 100% de la ventana */
+}
+.card-login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30vh; /* Ajusta la altura al 100% de la ventana */
+  padding-bottom: 35px;
+}
 
-  img {
-    
-    width: 130px;
-    height: 130px;
-  }
+ion-card {
+  max-width: 400px; /* Ajusta el ancho máximo según tus necesidades */
+}
+
+ion-card-content {
+  padding: 20px;
+}
+
+h1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+ion-img {
+  width: 30%;
+  height: auto; /* Para mantener la proporción original de la imagen */
+  margin: auto;
+}

@@ -1,13 +1,5 @@
-
 <ion-header>
   <ion-toolbar>
-    <ion-buttons slot="start" >
-      <!-- Icono para el perfil -->
-      <ion-button (click)="recargarPagina()">
-        <ion-icon name="refresh"></ion-icon>
-      </ion-button>
-    </ion-buttons>
-
     <ion-buttons slot="end" >
       <!-- Icono para el perfil -->
       <ion-button (click)="irAPerfil()">
@@ -25,16 +17,22 @@
 </ion-header>
 
 <ion-content>
-  <app-explore-container name="Craftify Modulo Proyectos"></app-explore-container>
-</ion-content>
-
-<div class="scrollable-div">  
+  <ion-refresher slot="fixed" [pullFactor]="0.5" [pullMin]="100" [pullMax]="200" (ionRefresh)="handleRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Proyectos</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
   <ion-list>
-  <ion-item *ngFor="let proyecto of datosApi">
-    <ion-label class="nombre-proyecto-label">{{ proyecto.nombre_proyecto }}</ion-label>
-    <ion-button expand="full" (click)="abrirModal(proyecto)">
-      <ion-icon name="eye-outline"></ion-icon> Ver Detalles
-    </ion-button>
-  </ion-item>
-</ion-list>
-</div>
+    <ion-item *ngFor="let proyecto of datosApi">
+      <ion-label class="nombre-proyecto-label">{{ proyecto.nombre_proyecto}}</ion-label>
+      <ion-button expand="full" (click)="abrirModal(proyecto)">
+        <ion-icon name="eye-outline"></ion-icon> Ver Proyecto
+      </ion-button>
+    </ion-item>
+  </ion-list> 
+</ion-card-content>
+</ion-card>
+</ion-content>

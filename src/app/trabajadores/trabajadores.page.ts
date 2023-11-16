@@ -52,8 +52,12 @@ export class TrabajadoresPage {
     this.router.navigate(['/login']);
   }
   
-  recargarPagina() {
+  handleRefresh(event:any) {
     window.location.reload();
+    setTimeout(() => {
+      // Any calls to load data go here
+      event.target.complete();
+    }, 2000);
   }
 }
 
