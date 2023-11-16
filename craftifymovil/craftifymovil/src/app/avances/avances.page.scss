@@ -3,3 +3,12 @@ ion-button {
     --color: black;
     font-weight: bold;
 }
+
+@media screen and (max-width: 600px) {
+}
+
+.scrollable-div {
+    max-height: 250px; /* o el valor que prefieras */
+    overflow-y: scroll; /* agregar barra de desplazamiento vertical cuando sea necesario */
+  }
+

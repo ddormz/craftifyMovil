@@ -11,6 +11,7 @@ import { AlertController } from '@ionic/angular';
 export class LoginPage {
   rut: string = '';
   password: string = '';
+  showPassword: boolean = false;
 
   constructor(private authService: AuthService, private router: Router, private alertController: AlertController) { }
 
@@ -37,6 +38,10 @@ export class LoginPage {
     });
 
     await alert.present();
+  }
+
+  togglePasswordVisibility() {
+    this.showPassword = !this.showPassword;
   }
 }
 

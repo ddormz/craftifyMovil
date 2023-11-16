@@ -4,8 +4,11 @@ ion-button {
     font-weight: bold;
 }
 
-ion-toolbar.sticky-toolbar {
-    position: sticky;
-    top: 0;
-    z-index: 10; // Puedes ajustar el valor según sea necesario
+@media screen and (max-width: 600px) {
+}
+
+.scrollable-div {
+    max-height: 250px; /* o el valor que prefieras */
+    overflow-y: scroll; /* agregar barra de desplazamiento vertical cuando sea necesario */
   }
+

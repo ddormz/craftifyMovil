@@ -1,31 +1,21 @@
 #container {
   text-align: center;
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 30%;
-  transform: translateY(-50%);
+  margin-top: 20px; /* Ajusta según sea necesario para centrar verticalmente y aumentar el espacio */
 }
 
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
+.small-text {
+  font-size: 12px; /* Ajusta el tamaño de la fuente según sea necesario */
 }
 
-#container p {
-  font-size: 16px;
-  line-height: 22px;
-
-  color: #8c8c8c;
-
-  margin: 0;
+.logo-container {
+  width: 50%; /* Ajusta el ancho de la imagen según sea necesario */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto; /* Centra horizontalmente */
 }
 
-#container a {
-  text-decoration: none;
-}
-
-img {
-  width: 130px;
-  height: 130px;
+ion-img {
+  width: 45%;
+  height: auto; /* Para mantener la proporción original de la imagen */
 }

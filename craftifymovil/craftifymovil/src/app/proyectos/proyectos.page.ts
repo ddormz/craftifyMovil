@@ -52,5 +52,8 @@ export class ProyectosPage {
     // Luego, redirige a la página de inicio de sesión o a la página principal
     this.router.navigate(['/login']);
   }
-
+  
+  recargarPagina() {
+    window.location.reload();
+  }
 }

@@ -1,23 +1,34 @@
+
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start" >
+      <!-- Icono para el perfil -->
+      <ion-button (click)="recargarPagina()">
+        <ion-icon name="refresh"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+    <ion-buttons slot="end" >
+      <!-- Icono para el perfil -->
+      <ion-button (click)="irAPerfil()">
+        <ion-icon name="person"></ion-icon>
+      </ion-button>
+    </ion-buttons>  
+    
+      <!-- Icono para cerrar sesión (logout) -->
+      <ion-buttons slot="end" >
+      <ion-button (click)="cerrarSesion()">
+        <ion-icon name="log-out"></ion-icon>
+      </ion-button>
+    </ion-buttons>  
+  </ion-toolbar>
+</ion-header>
+
 <ion-content>
-  <ion-header>
-    <ion-toolbar>
-      <ion-buttons slot="start" >
-        <!-- Icono para el perfil -->
-        <ion-button (click)="irAPerfil()">
-          <ion-icon name="person"></ion-icon>
-        </ion-button>
-      </ion-buttons>  
-        <!-- Icono para cerrar sesión (logout) -->
-        <ion-buttons slot="end" >
-        <ion-button (click)="cerrarSesion()">
-          <ion-icon name="log-out"></ion-icon>
-        </ion-button>
-      </ion-buttons>  
-    </ion-toolbar>
-  </ion-header>
   <app-explore-container name="Craftify Modulo Cotizaciones"></app-explore-container>
 </ion-content>
-<div>
+
+<div class="scrollable-div">
   <ion-list>
     <ion-item *ngFor="let cotizaciones of datosApi">
       <ion-label class="nombre-cotizaciones">{{ cotizaciones.id_cotizacion }} {{ cotizaciones.nombre_cotizacion }}</ion-label>

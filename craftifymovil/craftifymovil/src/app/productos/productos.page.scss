@@ -3,3 +3,18 @@ ion-button {
     --color: black;
     font-weight: bold;
 }
+
+@media screen and (max-width: 600px) {
+}
+
+
+div{
+    margin-top: auto;
+}
+
+
+
+  ion-card-title {
+    text-align: center;
+    /* Otros estilos personalizados si es necesario */
+  }
