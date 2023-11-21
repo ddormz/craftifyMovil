@@ -1,3 +1,14 @@
+/* Estilos generales para las tabs */
+ion-tabs {
+    width: 100%;
+  }
+  
+ion-tab-bar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+
 ion-tab-button{
     --color: grey;
     --color-selected:#7CF0A9;
@@ -8,5 +19,6 @@ ion-tab-button{
     justify-content: center;
 }
 
-@media screen and (max-width: 600px) {
-}
+@media only screen and (max-width: 600px) {
+  
+  }

@@ -67,6 +67,10 @@ const routes: Routes = [
     path: 'modaltarea',
     loadChildren: () => import('./modales/modaltarea/modaltarea.module').then( m => m.ModaltareaPageModule)
   },
+  {
+    path: 'formulariotarea',
+    loadChildren: () => import('./formulariotarea/formulariotarea.module').then( m => m.FormulariotareaPageModule)
+  },
 
 ];
 @NgModule({

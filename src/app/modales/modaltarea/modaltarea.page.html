@@ -49,7 +49,11 @@
           <ion-label class="label">Fecha Termino</ion-label>
           <ion-text>{{ tareas.fecha_termino }}</ion-text>
         </ion-item>
-        
+        <ion-item>
+          <ion-icon name="image" slot="start"></ion-icon>
+          <ion-label class="label">Subir Avance Tarea</ion-label>
+          <ion-button (click)="cerrarModalYRedirigir()">Subir</ion-button>
+        </ion-item>
       </ion-list>
     </ion-card-content>
   </ion-card>
