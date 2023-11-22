@@ -126,7 +126,7 @@ export class FormulariotareaPage implements OnInit {
     console.log('Formulario enviado:', this.tareaForm.value);
   
     // Enviar la solicitud POST a la API
-    this.http.post('http://127.0.0.1:8000/api/apiagregaravances/', formData)
+    this.http.post('https://craftify.ngrok.app/api/apiagregaravances/', formData)
       .subscribe(
         (response) => {
           console.log('Respuesta de la API:', response);
