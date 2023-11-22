@@ -5,9 +5,14 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">perfil</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<!-- perfil.page.html -->
+<div *ngIf="usuario">
+  <h1>{{ usuario.user_info.rut }}</h1>
+  <p>{{ usuario.user_info.nombre }}</p>
+  <p>{{ usuario.user_info.apellido }}</p>
+  <p>{{ usuario.user_info.groups }}</p>
+  <p>{{ usuario.user_info.date_joined }}</p>
+  <p>{{ usuario.user_info.email }}</p>
+  <!-- Resto de tu contenido -->
+</div>
 </ion-content>

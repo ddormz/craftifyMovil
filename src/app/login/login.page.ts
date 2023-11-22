@@ -18,16 +18,18 @@ export class LoginPage {
   onLogin(): void {
     this.authService.login(this.rut, this.password).subscribe(
       (response: any) => {
+        this.authService.setUsuarioLogueado(response);
+        localStorage.setItem('usuarioLogueado', JSON.stringify(response));
         this.router.navigate(['/tabs']);
+        console.log(response);
       },
       error => {
         console.error(error);
         // Maneja el error de inicio de sesión
-
+  
         // Muestra un mensaje de alerta al usuario
         this.presentAlert('Credenciales Inválidas', 'Por favor, verifica tu RUT y Contraseña.');
-      }
-    );
+      });
   }
 
   async presentAlert(header: string, message: string): Promise<void> {
@@ -44,6 +46,3 @@ export class LoginPage {
     this.showPassword = !this.showPassword;
   }
 }
-
-
-

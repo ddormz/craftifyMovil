@@ -1,5 +1,7 @@
 {
   "name": "craftifymovil",
-  "integrations": {},
+  "integrations": {
+    "capacitor": {}
+  },
   "type": "angular"
 }

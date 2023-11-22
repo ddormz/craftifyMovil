@@ -1,52 +1,44 @@
-<ion-content>
-  <ion-card>
-    <ion-card-header>
-      <ion-card-title>Formulario Tareas</ion-card-title>
-    </ion-card-header>
-  <ion-card-content>
-    
-  <form action="">
-    <ion-list>
+<ion-content class="ion-padding">
+ <ion-item>
+   <ion-label>Proyecto Seleccionado</ion-label>
+   <p>Esta tarea es del proyecto: {{ proyecto }}</p>
+ </ion-item>
+ <ion-item>
+   <ion-label>Equipo</ion-label>
+   <p>Esta tarea pertenece al equipo:{{ equipo }}</p>
+ </ion-item>
+ <ion-item>
+   <ion-label>Status</ion-label>
+   <p>Esta tarea esta en status: {{ status }}</p>
+ </ion-item>
+ <ion-item>
+   <ion-label>Tiempo Restante</ion-label>
+   <p>Esta tarea tiene un tiempo restante de: {{ diasRestantes }}</p>
+ </ion-item>
+  <form [formGroup]="tareaForm" enctype="multipart/form-data" method="post">
+    <!-- Tarea -->
     <ion-item>
-      <ion-icon name="file-tray"></ion-icon>
-      <ion-label class="Tarea">Tarea</ion-label>
-      <ion-input label="Tarea"></ion-input>
+      <ion-select label="Tarea" placeholder="Selecciona tu Tarea" formControlName="tarea">
+        <ion-select-option>
+          {{ tareaSeleccionada }}
+        </ion-select-option>
+      </ion-select>
     </ion-item>
 
+    <!-- Comentario -->
     <ion-item>
-      <ion-icon name="calendar"></ion-icon>
-      <ion-label class="Fecha">Fecha</ion-label>
-      <ion-input label="Fecha"></ion-input>
+      <ion-input label="Comentario" position ="floating" placeholder="Escribe tu comentario" formControlName="comentario"></ion-input>
     </ion-item>
 
+    <!-- Foto -->
     <ion-item>
-      <ion-icon name="document-text"></ion-icon>
-      <ion-label class="Comentario">Comentario</ion-label>
-      <ion-input label="Comentario"></ion-input>
+      <ion-label position="stacked">Foto</ion-label>
+      <ion-input type="file" (change)="onFileChange($event)" formControlName="imagen"></ion-input>
     </ion-item>
 
-    <ion-item>
-      <ion-icon name="image"></ion-icon>
-      <ion-label class="Imagen">Imagen</ion-label>
-      <ion-input label="Imagen"></ion-input>
-    </ion-item>
+    <!-- Otros campos del formulario -->
 
-    <ion-item>
-      <ion-icon name="people"></ion-icon>
-      <ion-label class="Equipo">Equipo</ion-label>
-      <ion-input label="Equipo"></ion-input>
-    </ion-item>
-
-    <ion-item>
-      <ion-icon name="cube"></ion-icon>
-      <ion-label class="Proyecto">Proyecto</ion-label>
-      <ion-input label="Proyecto"></ion-input>
-    </ion-item>
-  </ion-list>
-  <input type="submit">
+    <!-- Botón de envío -->
+    <ion-button expand="full" color="primary" (click)="submitForm()">Enviar Formulario</ion-button>
   </form>
-
-</ion-card-content>
-</ion-card>
 </ion-content>
-

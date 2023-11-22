@@ -1,8 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
-
+import { FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 import { IonicModule } from '@ionic/angular';
+
+
 
 import { FormulariotareaPageRoutingModule } from './formulariotarea-routing.module';
 
@@ -13,7 +15,10 @@ import { FormulariotareaPage } from './formulariotarea.page';
     CommonModule,
     FormsModule,
     IonicModule,
-    FormulariotareaPageRoutingModule
+    FormulariotareaPageRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule,
   ],
   declarations: [FormulariotareaPage]
 })

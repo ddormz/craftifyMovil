@@ -1,26 +1,33 @@
-import { Component, Input } from '@angular/core';
-import { ModalController } from '@ionic/angular';
-import { NavController } from '@ionic/angular';
-import { Router } from '@angular/router';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { ModalController, NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-modaltarea',
   templateUrl: './modaltarea.page.html',
   styleUrls: ['./modaltarea.page.scss'],
 })
-export class ModaltareaPage{
+export class ModaltareaPage {
   @Input() tareas: any;
-  constructor(private modalController: ModalController, private navCtrl: NavController, private router: Router) {}
+  @Output() subirTarea = new EventEmitter<any>();
+
+  constructor(private modalController: ModalController, private navCtrl: NavController) {}
 
   cerrarModal() {
-    this.modalController.dismiss(); // Cierra el modal
+    this.modalController.dismiss();
   }
-  
-  async cerrarModalYRedirigir() {
+
+  subir() {
+    // Emitir la tarea seleccionada
+    this.subirTarea.emit(this.tareas.tarea);
+
     // Cierra el modal
-    await this.modalController.dismiss();
-  
-    // Redirige a la página deseada
-    this.router.navigate(['/formulariotarea']);
+    this.modalController.dismiss();
+
+    // Redirige directamente a la página de formulario
+    this.navCtrl.navigateForward(['/formulariotarea'], { queryParams: {
+       tareaSeleccionada: '*' + this.tareas.tarea_id  + ' - ' + this.tareas.tarea, id: this.tareas.tarea_id, equipo: this.tareas.equipo_id_equipo,
+        proyecto: this.tareas.proyecto, fecha_asignacion: this.tareas.fecha_asignacion, 
+        fecha_fin: this.tareas.fecha_termino, status: this.tareas.status_tarea } });
+    console.log('Tarea seleccionada:', this.tareas.tarea_id);
   }
 }
