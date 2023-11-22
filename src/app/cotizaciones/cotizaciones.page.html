@@ -23,16 +23,17 @@
   <ion-refresher slot="fixed" [pullFactor]="0.5" [pullMin]="100" [pullMax]="200" (ionRefresh)="handleRefresh($event)">
     <ion-refresher-content></ion-refresher-content>
   </ion-refresher>
-  <ion-card>
+  <ion-card class="card">
     <ion-card-header>
       <ion-card-title>Cotizaciones</ion-card-title>
+      <ion-card-subtitle class="card-subtitle">Listado de cotizaciones</ion-card-subtitle>
     </ion-card-header>
     <ion-card-content>
   <ion-list>
     <ion-item *ngFor="let cotizaciones of datosApi">
-      <ion-label class="nombre-cotizaciones">{{ cotizaciones.id_cotizacion}} {{ cotizaciones.nombre_cotizacion}}</ion-label>
+      <ion-label class="nombre-cotizaciones">N°{{ cotizaciones.id_cotizacion}} - {{ cotizaciones.nombre_cotizacion}}</ion-label>
       <ion-button expand="full" (click)="abrirModal(cotizaciones)">
-        <ion-icon name="eye-outline"></ion-icon> Ver Cotizacion
+        <ion-icon shape="round" name="eye-outline"></ion-icon>
       </ion-button>
     </ion-item>
   </ion-list> 

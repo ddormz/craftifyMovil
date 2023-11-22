@@ -20,6 +20,8 @@ export class LoginPage {
       (response: any) => {
         this.authService.setUsuarioLogueado(response);
         localStorage.setItem('usuarioLogueado', JSON.stringify(response));
+        
+
         this.router.navigate(['/tabs']);
         console.log(response);
       },

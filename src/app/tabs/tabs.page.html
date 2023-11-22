@@ -1,30 +1,31 @@
 <ion-tabs>
   <ion-tab-bar slot="bottom">
-    <ion-tab-button tab="proyectos" href="/tabs/proyectos">
+    <ion-tab-button *ngIf="tienePermisosProyectos" tab="proyectos" href="/tabs/proyectos">
       <ion-icon aria-hidden="true" name="home-outline"></ion-icon>
       <ion-label></ion-label>
     </ion-tab-button>
-    <ion-tab-button tab="trabajadores" href="/tabs/trabajadores">
+    <ion-tab-button *ngIf="tienePermisosTrabajadores" tab="trabajadores" href="/tabs/trabajadores">
       <ion-icon aria-hidden="true" name="people-outline"></ion-icon>
       <ion-label></ion-label>
     </ion-tab-button>
 
-    <ion-tab-button tab="cotizaciones" href="/tabs/cotizaciones">
+    
+    <ion-tab-button *ngIf="tienePermisoCotizaciones" tab="cotizaciones" href="/tabs/cotizaciones">
       <ion-icon aria-hidden="true" name="cash-outline"></ion-icon>
       <ion-label></ion-label>
     </ion-tab-button>
 
-    <ion-tab-button tab="productos" href="/tabs/productos">
+    <ion-tab-button *ngIf="tienePermisosProductos" tab="productos" href="/tabs/productos">
       <ion-icon aria-hidden="true" name="construct-outline"></ion-icon>
       <ion-label></ion-label>
     </ion-tab-button>
 
-    <ion-tab-button tab="avances" href="/tabs/avances">
+    <ion-tab-button *ngIf="tienePermisosAvances" tab="avances" href="/tabs/avances">
       <ion-icon aria-hidden="true" name="eye-outline"></ion-icon>
       <ion-label></ion-label>
     </ion-tab-button>
 
-    <ion-tab-button tab="tareas" href="/tabs/tareas">
+    <ion-tab-button *ngIf="tienePermisosTareas" tab="tareas" href="/tabs/tareas">
       <ion-icon aria-hidden="true" name="file-tray-full-outline"></ion-icon>
       <ion-label></ion-label>
     </ion-tab-button>

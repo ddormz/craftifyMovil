@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { ModalcotizacionesPageRoutingModule } from './modalcotizaciones-routing.module';
 
 import { ModalcotizacionesPage } from './modalcotizaciones.page';
+import { CurrencyPipe } from '@angular/common';
 
 @NgModule({
   imports: [
@@ -16,5 +17,6 @@ import { ModalcotizacionesPage } from './modalcotizaciones.page';
     ModalcotizacionesPageRoutingModule
   ],
   declarations: [ModalcotizacionesPage]
+  ,providers: [CurrencyPipe]
 })
 export class ModalcotizacionesPageModule {}

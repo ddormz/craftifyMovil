@@ -50,6 +50,8 @@ export class TareasPage{
     // Puedes implementar aquí la lógica para cerrar sesión, por ejemplo, limpiar el token de autenticación, etc.
     // Luego, redirige a la página de inicio de sesión o a la página principal
     this.router.navigate(['/login']);
+    localStorage.removeItem('usuarioLogueado');
+
   }
   
   handleRefresh(event:any) {

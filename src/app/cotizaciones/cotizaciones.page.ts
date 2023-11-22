@@ -17,7 +17,10 @@ export class CotizacionesPage {
   constructor(private apiService: ApiService, private modalController: ModalController, private router: Router, private httpClient: HttpClient) {
     this.apiService.getDatosCotizaciones().subscribe(
       (data) => {
-        this.datosApi = data;
+        const cotizacionesArray = Object.values(data || {});
+        // Ordenar cotizaciones por fecha
+        this.datosApi = cotizacionesArray.sort((a, b) => new Date(b.fecha_cotizacion).getTime() - new Date(a.fecha_cotizacion).getTime());
+
       },
       (error) => {
         console.error('Error al obtener datos de la API:', error);
@@ -52,6 +55,7 @@ export class CotizacionesPage {
     // Puedes implementar aquí la lógica para cerrar sesión, por ejemplo, limpiar el token de autenticación, etc.
     // Luego, redirige a la página de inicio de sesión o a la página principal
     this.router.navigate(['/login']);
+    localStorage.removeItem('usuarioLogueado');
   }
 
   handleRefresh(event:any) {

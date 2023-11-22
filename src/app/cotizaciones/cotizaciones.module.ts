@@ -8,6 +8,7 @@ import { CotizacionesPageRoutingModule } from './cotizaciones-routing.module';
 
 import { CotizacionesPage } from './cotizaciones.page';
 import { ExploreContainerComponentModule } from '../explore-container/explore-container.module';
+import { CurrencyPipe } from '@angular/common';
 
 @NgModule({
   imports: [
@@ -18,5 +19,6 @@ import { ExploreContainerComponentModule } from '../explore-container/explore-co
     ExploreContainerComponentModule
   ],
   declarations: [CotizacionesPage]
+  ,providers: [CurrencyPipe]
 })
 export class CotizacionesPageModule {}

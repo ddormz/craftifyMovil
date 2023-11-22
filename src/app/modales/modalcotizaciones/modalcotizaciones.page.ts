@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { ApiService } from 'src/app/api.service';
 
 
+
 @Component({
   selector: 'app-modalcotizaciones',
   templateUrl: './modalcotizaciones.page.html',
@@ -12,12 +13,14 @@ import { ApiService } from 'src/app/api.service';
 })
 export class ModalcotizacionesPage{
   @Input() cotizaciones: any;
+  @Input() subtotalsindecimales: any;
   datosApi: any;
+
+  
 
   constructor(private apiService: ApiService, private modalController: ModalController, private router: Router, private httpClient: HttpClient) {
     this.apiService.getDatosCotizaciones().subscribe(
       (data) => {
-        console.log('Datos recibidos de la API:', data);
         this.datosApi = data;
       },
       (error) => {
@@ -35,7 +38,13 @@ export class ModalcotizacionesPage{
     // Abre el enlace en una nueva ventana o pestaña del navegador
     window.open(url, '_blank');
   }
-}
 
+  
+
+
+
+
+  
+}
 
 

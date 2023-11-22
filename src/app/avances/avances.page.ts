@@ -17,6 +17,7 @@ export class AvancesPage{
     this.apiService.getDatosDesdeAPIAvances().subscribe(
       (data) => {
         this.datosApi = data;
+        console.log(this.datosApi);
       },
       (error) => {
         console.error('Error al obtener datos de la API:', error);
