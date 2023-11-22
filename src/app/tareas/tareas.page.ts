@@ -16,7 +16,6 @@ export class TareasPage{
   constructor(private apiService: ApiService, private modalController: ModalController, private router: Router) {
     this.apiService.getDatosTareas().subscribe(
       (data) => {
-        console.log('Datos recibidos de la API:', data);
         this.datosApi = data;
       },
       (error) => {

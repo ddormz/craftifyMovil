@@ -17,7 +17,6 @@ export class CotizacionesPage {
   constructor(private apiService: ApiService, private modalController: ModalController, private router: Router, private httpClient: HttpClient) {
     this.apiService.getDatosCotizaciones().subscribe(
       (data) => {
-        console.log('Datos recibidos de la API:', data);
         this.datosApi = data;
       },
       (error) => {

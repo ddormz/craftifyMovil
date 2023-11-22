@@ -15,7 +15,6 @@ export class TrabajadoresPage {
   constructor(private apiService: ApiService, private modalController: ModalController,private router: Router) {
     this.apiService.getDatosDesdeAPITrabajadores().subscribe(
       (data) => {
-        console.log('Datos recibidos de la API:', data);
         this.datosApi = data;
       },
       (error) => {

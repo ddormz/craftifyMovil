@@ -1,7 +1,7 @@
 ion-button {
-    --background: #7CF0A9;
+    --background: #7cf0a8da;
     --color: black;
-    font-weight: bold;
+    text-transform: capitalize;
 }
 
 @media screen and (max-width: 600px) {
@@ -14,3 +14,18 @@ div{
 ion-card-title {
 text-align: center;
   }
+
+.nombre-proyecto-label {
+    text-transform: capitalize !important;
+    font-size: 14px;
+
+}
+
+.card {
+    padding-top: 20px;
+}
+
+.card-subtitle {
+    font-size: 14px;
+    text-align: center;
+}

@@ -16,7 +16,6 @@ export class AvancesPage{
   constructor(private apiService: ApiService, private modalController: ModalController, private router: Router) {
     this.apiService.getDatosDesdeAPIAvances().subscribe(
       (data) => {
-        console.log('Datos recibidos de la API:', data);
         this.datosApi = data;
       },
       (error) => {

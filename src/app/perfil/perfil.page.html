@@ -1,18 +1,59 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>perfil</ion-title>
+    <ion-title>Perfil de Usuario</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="volverAtras()">
+        <ion-icon name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-<!-- perfil.page.html -->
-<div *ngIf="usuario">
-  <h1>{{ usuario.user_info.rut }}</h1>
-  <p>{{ usuario.user_info.nombre }}</p>
-  <p>{{ usuario.user_info.apellido }}</p>
-  <p>{{ usuario.user_info.groups }}</p>
-  <p>{{ usuario.user_info.date_joined }}</p>
-  <p>{{ usuario.user_info.email }}</p>
-  <!-- Resto de tu contenido -->
-</div>
+
+  <ion-card *ngIf="usuario" class="info-card" lines="full">
+    <ion-card-header class="ion-text-center">
+      <ion-icon name="people-circle" id="avatar"></ion-icon>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item>
+          <ion-icon name="person" class="card-icon" slot="start"></ion-icon>
+          <ion-label>Nombre:</ion-label>
+          <ion-text class="text">{{ usuario.user_info.nombre }}</ion-text>
+        </ion-item>
+
+        <ion-item>
+          <ion-icon name="person" class="card-icon" slot="start"></ion-icon>
+          <ion-label>Apellido:</ion-label>
+          <ion-text class="text">{{ usuario.user_info.apellido }}</ion-text>
+        </ion-item>
+
+        <ion-item>
+          <ion-icon name="card" class="card-icon" slot="start"></ion-icon>
+          <ion-label>RUT:</ion-label>
+          <ion-text class="text" >{{ usuario.user_info.rut }}</ion-text>
+        </ion-item>
+        <ion-item>
+          <ion-icon name="mail" class="card-icon" slot="start"></ion-icon>
+          <ion-label>Email:</ion-label>
+          <ion-text class="text">{{ usuario.user_info.email }}</ion-text>
+        </ion-item>
+
+        <ion-item>
+          <ion-icon name="calendar" class="card-icon" slot="start"></ion-icon>
+          <ion-label>Fecha de ingreso:</ion-label>
+          <ion-text class="text">{{ usuario.user_info.date_joined | date: "dd/MM/yyyy" }}</ion-text>
+        </ion-item>
+
+        <ion-item>
+          <ion-icon name="people" class="card-icon" slot="start"></ion-icon>
+          <ion-label>Rol:</ion-label>
+          <ion-text class="text">{{ usuario.user_info.groups }}</ion-text>
+        </ion-item>
+
+
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
 </ion-content>

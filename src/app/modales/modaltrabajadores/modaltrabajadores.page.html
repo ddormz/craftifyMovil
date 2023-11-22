@@ -17,27 +17,27 @@
         <ion-item>
           <ion-icon name="person" slot="start"></ion-icon>
           <ion-label class="label">RUT</ion-label>
-          <ion-text>{{ trabajadores.rut }}</ion-text>
+          <ion-text class="text">{{ trabajadores.rut }}</ion-text>
         </ion-item>
         <ion-item>
           <ion-icon name="people" slot="start"></ion-icon>
           <ion-label class="label">Nombre</ion-label>
-          <ion-text>{{ trabajadores.nombre }}</ion-text>
+          <ion-text class="text">{{ trabajadores.nombre }}</ion-text>
         </ion-item>
         <ion-item>
           <ion-icon name="people" slot="start"></ion-icon>
           <ion-label class="label">Apellido</ion-label>
-          <ion-text>{{ trabajadores.apellido}}</ion-text>
+          <ion-text class="text">{{ trabajadores.apellido}}</ion-text>
         </ion-item>
         <ion-item>
           <ion-icon name="mail" slot="start"></ion-icon>
           <ion-label class="label">Email</ion-label>
-          <ion-text>{{ trabajadores.email }}</ion-text>
+          <ion-text class="text">{{ trabajadores.email }}</ion-text>
         </ion-item>
         <ion-item>
           <ion-icon name="calendar" slot="start"></ion-icon>
           <ion-label class="label">Fecha Contrato</ion-label>
-          <ion-text>{{ trabajadores.fecha_agregado }}</ion-text>
+          <ion-text class="text">{{ trabajadores.fecha_agregado | date: 'yyyy-MM-dd' }}</ion-text>
         </ion-item>
       </ion-list>
     </ion-card-content>
