@@ -3,6 +3,9 @@ import { ApiService } from '../api.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
+import { ToastController } from '@ionic/angular';
+
 
 @Component({
   selector: 'app-formulariotarea',
@@ -27,7 +30,9 @@ export class FormulariotareaPage implements OnInit {
     private apiService: ApiService,
     private formBuilder: FormBuilder,
     private route: ActivatedRoute,
-    private http: HttpClient  // Inyección de HttpClient
+    private http: HttpClient,
+    private router: Router,
+    private toastController: ToastController // Inyección de HttpClient
   ) {
     this.tareaForm = this.formBuilder.group({
       tarea: ['', Validators.required],
@@ -35,6 +40,8 @@ export class FormulariotareaPage implements OnInit {
       fecha: [''],
       imagen: [null, Validators.required]
     });
+
+    
   }
 
   ngOnInit() {
@@ -90,6 +97,15 @@ export class FormulariotareaPage implements OnInit {
       });
     }
   }
+
+  async showToast(message: string) {
+    const toast = await this.toastController.create({
+      message: message,
+      duration: 2000, // Duración en milisegundos
+      position: 'bottom' // Posición en la pantalla
+    });
+    toast.present();
+  }
   
   submitForm() {
     // Establecer la fecha actual
@@ -124,17 +140,28 @@ export class FormulariotareaPage implements OnInit {
       formData.append('imagen', imagenControl.value);
     }
     console.log('Formulario enviado:', this.tareaForm.value);
-  
+    
     // Enviar la solicitud POST a la API
     this.http.post('https://craftify.ngrok.app/api/apiagregaravances/', formData)
-      .subscribe(
-        (response) => {
-          console.log('Respuesta de la API:', response);
-          // Puedes realizar acciones adicionales después de recibir una respuesta exitosa
-        },
-        (error) => {
-          console.error('Error al enviar formulario a la API:', error);
-          // Puedes manejar el error de acuerdo a tus necesidades
+    .subscribe(
+      async (response: any) => {
+        console.log('Respuesta de la API:', response);
+        if (response.fecha) {
+          console.log('Fecha de la respuesta:', response.fecha);
+          await this.showToast('Subido correctamente');
+          this.router.navigate(['/tabs/avances']);
+        } else {
+          console.error('Error al enviar formulario a la API:', response);
+          await this.showToast('Error en la solicitud');
         }
-      );
-  }}
+      },
+      async (error) => {
+        console.error('Error al enviar formulario a la API:', error);
+        // Mostrar un toast con el mensaje de error
+        await this.showToast('Error en la solicitud, verifica que todos los campos esten rellenos' );
+      }
+    );
+
+  // ...
+    }
+  }

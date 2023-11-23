@@ -1,24 +1,30 @@
 <ion-content class="ion-padding">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Detalles de Tarea</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
  <ion-item>
-   <ion-label>Proyecto Seleccionado</ion-label>
-   <p>Esta tarea es del proyecto: {{ proyecto }}</p>
+   <ion-icon name="cube" slot="start"></ion-icon>
+   <ion-label>Proyecto Seleccionado:  {{ proyecto }}</ion-label>
  </ion-item>
  <ion-item>
-   <ion-label>Equipo</ion-label>
-   <p>Esta tarea pertenece al equipo:{{ equipo }}</p>
+   <ion-icon name="people" slot="start"></ion-icon>
+   <ion-label>Equipo: {{ equipo }}</ion-label>
  </ion-item>
  <ion-item>
-   <ion-label>Status</ion-label>
-   <p>Esta tarea esta en status: {{ status }}</p>
+   <ion-icon name="flag" slot="start"></ion-icon>
+   <ion-label>Status: {{ status }}</ion-label>
  </ion-item>
  <ion-item>
-   <ion-label>Tiempo Restante</ion-label>
-   <p>Esta tarea tiene un tiempo restante de: {{ diasRestantes }}</p>
+   <ion-icon name="calendar" slot="start"></ion-icon>
+   <ion-label>Tiempo Restante: {{ diasRestantes }} Dias</ion-label>
  </ion-item>
   <form [formGroup]="tareaForm" enctype="multipart/form-data" method="post">
     <!-- Tarea -->
     <ion-item>
-      <ion-select label="Tarea" placeholder="Selecciona tu Tarea" formControlName="tarea">
+      <ion-icon name="copy" slot="start"></ion-icon>
+      <ion-select label="Tarea" placeholder="Selecciona tu Tarea" formControlName="tarea" slot="start">
         <ion-select-option>
           {{ tareaSeleccionada }}
         </ion-select-option>
@@ -27,18 +33,22 @@
 
     <!-- Comentario -->
     <ion-item>
+      <ion-icon name="text" slot="start"></ion-icon>
       <ion-input label="Comentario" position ="floating" placeholder="Escribe tu comentario" formControlName="comentario"></ion-input>
     </ion-item>
 
     <!-- Foto -->
     <ion-item>
-      <ion-label position="stacked">Foto</ion-label>
+      <ion-icon name="image" slot="start"></ion-icon>
+      <ion-label label="default label">Foto</ion-label>
       <ion-input type="file" (change)="onFileChange($event)" formControlName="imagen"></ion-input>
     </ion-item>
 
     <!-- Otros campos del formulario -->
 
     <!-- Botón de envío -->
-    <ion-button expand="full" color="primary" (click)="submitForm()">Enviar Formulario</ion-button>
+    <ion-button expand="full" (click)="submitForm()">Enviar Formulario</ion-button>
   </form>
+</ion-card-content>
+</ion-card>
 </ion-content>
