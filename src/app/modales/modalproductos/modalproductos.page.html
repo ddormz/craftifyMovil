@@ -64,6 +64,11 @@
           <ion-label class="label">Stock</ion-label>
           <ion-text>{{ productos.stock }}</ion-text>
         </ion-item>
+        <ion-item>
+          <ion-icon name="image" slot="start"></ion-icon>
+          <ion-label class="label">Imagen del Producto</ion-label>
+        </ion-item>
+        <ion-img [src]="baseURL + productos.imagen" alt="Imagen del avance" ></ion-img>
       </ion-list>
     </ion-card-content>
   </ion-card>

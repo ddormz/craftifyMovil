@@ -8,6 +8,7 @@ import { ModalController } from '@ionic/angular';
 })
 export class ModalproductosPage{
   @Input() productos: any;
+  baseURL: string = 'https://craftify.ngrok.app';
   constructor(private modalController: ModalController) {}
 
   cerrarModal() {
